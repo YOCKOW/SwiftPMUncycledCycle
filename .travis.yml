@@ -1,0 +1,15 @@
+matrix:
+  include:
+    - &macos
+      name: "Xcode 10.2"
+      os: osx
+      osx_image: xcode10.2
+      sudo: required
+      language: objective-c
+      script: &script
+        - cd ./PackageA
+        - swift build
+
+    - <<: *macos
+      name: "Xcode 11"
+      osx_image: xcode11
